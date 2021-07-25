@@ -81,6 +81,5 @@ async def game_letter_chosen(message: types.Message, state: FSMContext):
 
 
 def register_handlers_game(dp: Dispatcher):
-    # dp.register_message_handler(game_start, commands="play", state="*")
     dp.register_callback_query_handler(game_initialize, lambda c: c.data == "play", state="*")
     dp.register_message_handler(game_letter_chosen, state=GameState.in_process)
