@@ -1,6 +1,5 @@
 from aiogram import Dispatcher, types
 from aiogram.dispatcher import FSMContext
-# from aiogram.dispatcher.filters import Text
 
 from handlers.game import GameState
 
@@ -48,4 +47,3 @@ def register_handlers_common(dp: Dispatcher):
     dp.register_message_handler(cmd_start, commands="start", state="*")
     dp.register_message_handler(cmd_help, commands="help", state="*")
     dp.register_message_handler(cmd_exit, commands="cancel", state="*")
-    # dp.register_message_handler(cmd_exit, Text(equals="отмена", ignore_case=True), state="*")
